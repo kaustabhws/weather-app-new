@@ -9,3 +9,17 @@
 body {
   background: #0b131e;
 }
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #343541;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ececf1;
+  border-radius: 20px;
+  border: 3px solid #343541;
+}
