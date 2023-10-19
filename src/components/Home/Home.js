@@ -113,8 +113,6 @@ const Home = () => {
             }));
 
             setForecast(futureForecast);
-
-            console.log(forecast);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
