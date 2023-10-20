@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 import './Home.css'
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
         "Belize City",
         "Georgetown",
         "Nairobi"
-      ];
+    ];
 
     function getRandomCity() {
         const randomIndex = Math.floor(Math.random() * cities.length);
@@ -157,6 +158,10 @@ const Home = () => {
 
     return (
         <div className="home-wrap">
+            <Helmet>
+                <title>{currentData.resolvedAddress} Weather Details</title>
+                <meta name='description' content={`${currentData.resolvedAddress} current weather details as well as 15 day forecast details`} />
+            </Helmet>
             <div className="search-wrap">
                 <input type="text" name="city" id="city" autoComplete='off' placeholder='Search City' onChange={handleChange} />
                 <i className="fa-solid fa-magnifying-glass fa-lg" onClick={() => {
