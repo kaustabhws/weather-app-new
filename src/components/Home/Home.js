@@ -3,6 +3,35 @@ import './Home.css'
 
 const Home = () => {
 
+    const cities = [
+        "New York",
+        "London",
+        "Los Angeles",
+        "Sydney",
+        "Toronto",
+        "Auckland",
+        "Dublin",
+        "Cape Town",
+        "Edinburgh",
+        "Brisbane",
+        "Vancouver",
+        "Singapore",
+        "Gibraltar",
+        "Bermuda",
+        "Malta",
+        "Barbados",
+        "Jamaica",
+        "Belize City",
+        "Georgetown",
+        "Nairobi"
+      ];
+
+    function getRandomCity() {
+        const randomIndex = Math.floor(Math.random() * cities.length);
+        return cities[randomIndex];
+    }
+    const randomCity = getRandomCity();
+
     function convertTo12HourFormat(time24) {
         const [hours, minutes] = time24.split(':');
         const hour = parseInt(hours);
@@ -15,7 +44,7 @@ const Home = () => {
 
     const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 
-    const [city, setCity] = useState('London')
+    const [city, setCity] = useState(randomCity)
 
     const handleChange = (e) => {
         setCity(e.target.value);
